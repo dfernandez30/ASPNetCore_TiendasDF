@@ -1,0 +1,31 @@
+﻿@model TiendasDF.Models.Pan[]
+@{
+    ViewData["Title"] = "PANES";
+}
+<img src="~/Images/pan.jpg" alt="pan" width="40%" height="40%" style="float: right;">
+<h1>Panes</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Código de Barra</th>
+        <th>Cantidad</th>       
+        <th>Stock</th>
+        <th>Precio</th>
+        <th>Tipo</th>
+    </tr>
+    @foreach (var pan in Model)
+    {
+        <tr>
+            <td>@pan.id</td>
+            <td>@pan.nombre</td>
+            <td>@pan.marca</td>
+            <td>@pan.codigoBarra</td>
+            <td>@pan.cantidad @pan.unidadCantidad</td>
+            <td>@pan.stock</td>
+            <td>$@pan.precio</td>
+            <td>@pan.tipoPan</td>
+        </tr>
+    }
+</table>

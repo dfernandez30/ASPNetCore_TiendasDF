@@ -1,0 +1,94 @@
+﻿@model ViewModel
+@{
+    ViewBag.Title = "Personal";
+}
+<h2>Personal Tienda</h2>
+<p><b>Jefes de Área:</b></p>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>RUT</th>
+        <th>Horas Trabajadas</th>
+        <th>Meses de Antigüedad</th>
+        <th>Bono</th>
+        <th>Área</th>
+        <th>Tamaño Equipo</th>
+    </tr>
+    @foreach (var jefe in Model.Jefe)
+    {
+        <tr>
+            <td>@jefe.id</td>
+            <td>@jefe.nombre</td>
+            <td>@jefe.apellidoPaterno @jefe.apellidoMaterno</td>
+            <td>@jefe.rut</td>
+            <td>@jefe.horasTrabajadas</td>
+            <td>@jefe.mesesAntiguedad</td>
+            <td>@jefe.bono</td>
+            <td>@jefe.area</td>
+            <td>@jefe.tamanioEquipo</td>
+        </tr>
+    }
+</table>
+
+<p><b>Guardias:</b></p>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>RUT</th>
+        <th>Horas Trabajadas</th>
+        <th>Meses de Antigüedad</th>
+        <th>Bono</th>
+        <th>Artículos recuperados</th>
+        <th>Área</th>
+    </tr>
+    @foreach (var guardia in Model.Guardia)
+    {
+    <tr>
+        <td>@guardia.id</td>
+        <td>@guardia.nombre</td>
+        <td>@guardia.apellidoPaterno @guardia.apellidoMaterno</td>
+        <td>@guardia.rut</td>
+        <td>@guardia.horasTrabajadas</td>
+        <td>@guardia.mesesAntiguedad</td>
+        <td>@guardia.bono</td>
+        <td>@guardia.articulosRecuperados</td>
+        <td>@guardia.area</td>
+    </tr>
+    }
+</table>
+
+<p><b>Cajeros:</b></p>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>RUT</th>
+        <th>Horas Trabajadas</th>
+        <th>Meses de Antigüedad</th>
+        <th>Bono</th>
+        <th>N° de Caja</th>
+        <th>Turno</th>
+    </tr>
+    @foreach (var cajero in Model.Cajero)
+    {
+    <tr>
+        <td>@cajero.id</td>
+        <td>@cajero.nombre</td>
+        <td>@cajero.apellidoPaterno @cajero.apellidoMaterno</td>
+        <td>@cajero.rut</td>
+        <td>@cajero.horasTrabajadas</td>
+        <td>@cajero.mesesAntiguedad</td>
+        <td>@cajero.bono</td>
+        <td>@cajero.numeroCaja</td>
+        <td>@cajero.turno</td>
+    </tr>
+    }
+</table>

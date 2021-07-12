@@ -1,0 +1,33 @@
+﻿@model TiendasDF.Models.Carne[]
+@{
+    ViewData["Title"] = "CARNES";
+}
+<img src="~/Images/carne.jpg" alt="carne" width="40%" height="40%" style="float: right;">
+<h1>Carnes</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Código de Barra</th>
+        <th>Cantidad</th>
+        <th>Stock</th>
+        <th>Precio</th>
+        <th>Fecha Envasado</th>
+        <th>Animal</th>
+    </tr>
+    @foreach (var carne in Model)
+    {
+    <tr>
+        <td>@carne.id</td>
+        <td>@carne.nombre</td>
+        <td>@carne.marca</td>
+        <td>@carne.codigoBarra</td>
+        <td>@carne.cantidad @carne.unidadCantidad</td>
+        <td>@carne.stock</td>
+        <td>$@carne.precio</td>
+        <td>@carne.fechaEnvasado</td>
+        <td>@carne.animal</td>
+    </tr>
+    }
+</table>

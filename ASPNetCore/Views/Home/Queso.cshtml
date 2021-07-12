@@ -1,0 +1,33 @@
+﻿@model TiendasDF.Models.Queso[]
+@{
+    ViewData["Title"] = "QUESOS";
+}
+<img src="~/Images/queso.jpg" alt="queso" width="40%" height="40%" style="float: right;">
+<h1>Quesos</h1>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Código de Barra</th>
+        <th>Cantidad</th>
+        <th>Stock</th>
+        <th>Precio</th>
+        <th>Tipo</th>
+        <th>Tipo de Leche</th>
+    </tr>
+    @foreach (var queso in Model)
+    {
+        <tr>
+            <td>@queso.id</td>
+            <td>@queso.nombre</td>
+            <td>@queso.marca</td>
+            <td>@queso.codigoBarra</td>
+            <td>@queso.cantidad @queso.unidadCantidad</td>
+            <td>@queso.stock</td>
+            <td>$@queso.precio</td>
+            <td>@queso.tipo</td>
+            <td>@queso.tipoLeche</td>
+        </tr>
+    }
+</table>
